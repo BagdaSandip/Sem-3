@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joe - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 60px;
+      background: #1e293b;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #cbd5e1;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .cta {
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px;
+      flex-wrap: wrap;
+    }
+
+    .intro {
+      max-width: 50%;
+    }
+
+    .intro h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .intro h1 span {
+      color: #38bdf8;
+    }
+
+    .intro h2 {
+      color: #94a3b8;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .intro p {
+      color: #cbd5e1;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .hire {
+      background-color: #38bdf8;
+      color: #0f172a;
+    }
+
+    .projects {
+      background: transparent;
+      color: #38bdf8;
+      border: 2px solid #38bdf8;
+    }
+
+    .social {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .social a {
+      text-decoration: none;
+      background-color: #1e293b;
+      padding: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .social a:hover {
+      background-color: #334155;
+    }
+
+    .social img {
+      width: 20px;
+      filter: invert(100%);
+    }
+
+    .profile-img img {
+      width: 350px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 900px) {
+      .main {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .intro, .profile-img {
+        max-width: 100%;
+      }
+
+      .profile-img {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Joe.</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </nav>
+    <button class="cta">Let's Talk</button>
+  </header>
+
+  <section class="main">
+    <div class="intro">
+      <h1>Hi, I'm <span>Joe Greyson</span></h1>
+      <h2>Frontend Developer</h2>
+      <p>I build responsive and modern websites. Passionate about UI/UX and performance.</p>
+      <div class="buttons">
+        <button class="hire">Hire Me</button>
+        <button class="projects">See Projects</button>
+      </div>
+      <div class="social">
+        <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png"/></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png"/></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/twitter.png"/></a>
+      </div>
+    </div>
+    <div class="profile-img">
+      <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6" alt="Profile Image">
+    </div>
+  </section>
+
+</body>
+</html>
