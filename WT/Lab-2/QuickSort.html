@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUickSort</title>
+</head>
+<body>
+    <script>
+        let n =parseInt(prompt("Enter the numbers:"));
+        let arr = input.split(',').map(Number);
+        function quickSort(arr) {
+            if(arr.length<=1)return arr;
+            let pivot = arr[0];
+            let right = [];
+            let left = [];
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]<pivot){
+                left.push(arr[i]);
+                }
+                else{
+                    right.push(arr[i]);
+                }
+
+            }
+            return[...quickSort(left),pivot,...quickSort(right)];
+        }
+        let sortedArr = quickSort(arr);
+    document.write("Sorted Array: " + sortedArr.join(', '));
+    </script>
+</body>
+</html>
