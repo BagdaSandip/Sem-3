@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      let num = prompt("Enter a 2-digit number:");
+      if (num.length === 2 && !isNaN(num)) {
+        let firstDigit = parseInt(num[0]);
+        let secondDigit = parseInt(num[1]);
+
+        let result = 1;
+
+        for (let i = 0; i < secondDigit; i++) {
+          result *= firstDigit;
+        }
+
+        document.write("First Digit: " + firstDigit + "<br>");
+        document.write("Second Digit: " + secondDigit + "<br>");
+        document.write("Result: " + result);
+      } else {
+        document.write("Please enter a valid 2-digit number.");
+      }
+    </script>
+  </body>
+</html>
