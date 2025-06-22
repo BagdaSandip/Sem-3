@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Find 'a' Positions and String Between</title>
+  </head>
+  <body>
+    <h3>Find first and last occurrence of 'a'</h3>
+    <script>
+      let word = prompt("Enter a word:");
+
+      if (word) {
+        let firstPos = word.indexOf("a");
+        let lastPos = word.lastIndexOf("a");
+        if (firstPos === -1) {
+          document.write("The letter 'a' is not found in the word.");
+        } else if (firstPos === lastPos) {
+          document.write("Only one 'a' found at position " + (firstPos + 1));
+        } else {
+          let between = word.substring(firstPos + 1, lastPos);
+          document.write(
+            "First occurrence of 'a' at position: " + (firstPos + 1) + "<br>");
+          document.write(
+            "Last occurrence of 'a' at position: " + (lastPos + 1) + "<br>" );
+          document.write("String between them: " + between);
+        }
+      } else {
+        document.write("No word entered.");
+      }
+    </script>
+  </body>
+</html>
