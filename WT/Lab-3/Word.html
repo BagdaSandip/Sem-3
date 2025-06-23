@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Word Search in Sentences</title>
+</head>
+<body>
+  <h2>Search a Word in Sentences</h2>
+
+  <label for="searchInput">Enter word to search:</label>
+  <input type="text" id="searchInput" />
+  <button onclick="searchWord()">Search</button>
+
+  <h3>Results:</h3>
+  <div id="results"></div>
+
+  <script>
+    const sentences = [
+      "JavaScript is a versatile language.",
+      "I love learning new things.",
+      "Programming is fun and creative.",
+      "I use JavaScript for web development."
+    ];
+
+    function searchWord() {
+      const word = document.getElementById("searchInput").value.toLowerCase();
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML = ""; 
+
+      let found = false;
+
+
+      for (let i = 0; i < sentences.length; i++) {
+        if (sentences[i].toLowerCase().includes(word) && word !== "") {
+          const p = document.createElement("p");
+          p.textContent = `Found in sentence ${i + 1}: "${sentences[i]}"`;
+          resultsDiv.appendChild(p);
+          found = true;
+        }
+      }
+
+      if (!found) {
+        resultsDiv.innerHTML = "<p>No matches found.</p>";
+      }
+    }
+  </script>
+</body>
+</html>
