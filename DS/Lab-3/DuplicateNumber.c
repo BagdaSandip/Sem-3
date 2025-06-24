@@ -1,28 +1,29 @@
 #include<stdio.h>
-int main(){
-    int arr[100],i,j,n;
+void main(){
+    int n,i,j,duplicate=0;
     printf("Enter the Elements of the Array:");
     scanf("%d",&n);
     
-    printf("Enter the %d elements\n",n);
+    int arr[n];
+    printf("Enter %d Elements:",n);
     for(i=0;i<n;i++){
-        printf("%d",&arr[i]);
+        scanf("%d",&arr[i]);
     }
-    printf("The duplicate Elements are\n:");
-    for(i=0;i<n;i++){
+    for(i=0;i<n-1;i++){
         for(j=i+1;j<n;j++){
             if(arr[i]==arr[j]){
-                printf("%d\n",arr[i]);
+                duplicate=1;
                 break;
             }
         }
-
+        if(duplicate)
+        break;
     }
-    return 0;
-    
+    if(duplicate){
+        printf("Array Contains the duplicate elements");
+    }
+    else{
+        printf("Array does not contains the duplicate Elements");
     }
 
-
-
-
-    
+}
