@@ -19,5 +19,7 @@ void main() {
     arr[pos] = num;
     n++; 
     printf("Array after insertion:\n");
-    for()
+    for(i=0;i<=n;i++){
+        printf(arr[i]);
+    }
 }

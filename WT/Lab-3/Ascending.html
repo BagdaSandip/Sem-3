@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sort Array in Ascending Order</title>
+</head>
+<body>
+  <script>
+    var size = parseInt(prompt("Enter the number of elements:"));
+    var arr = [];
+    for (var i = 0; i < size; i++) {
+      arr[i] = parseInt(prompt("Enter element " + (i + 1) + ":"));
+    }
+    arr.sort(function(a, b) {
+      return a - b;
+    });
+    document.write("Sorted Array in Ascending Order: " + arr.join(", "));
+  </script>
+</body>
+</html>
