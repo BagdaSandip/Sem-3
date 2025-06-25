@@ -18,10 +18,10 @@ void Display();
     Insertfirst(a);
         printf("Linked List after insertion:\n");
      Display();
-
     return 0; }
 void Insertfirst(int x) {
-    struct node *newnode = (struct node *)malloc(sizeof(struct node));     if (newnode == NULL) {
+    struct node *newnode = (struct node *)malloc(sizeof(struct node));     
+    if (newnode == NULL) {
         printf("Memory allocation failed.\n");
         return;}
     newnode->info = x;
