@@ -13,7 +13,8 @@ void Display();
 
  int main() {
     int a;
-    printf("Enter a number: ");     scanf("%d", &a);
+    printf("Enter a number: ");   
+     scanf("%d", &a);
     Insertfirst(a);
         printf("Linked List after insertion:\n");
      Display();
@@ -40,7 +41,7 @@ struct node *temp = First;
 
 
     //insertAtlast
-    #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 
