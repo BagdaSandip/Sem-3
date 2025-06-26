@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+     body {
+      background-color: rgb(240, 240, 240);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      font-family: Arial, sans-serif;
+    }
+
+    table {
+      background-color: oklch(100% 0.00011 271.152);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    td {
+      padding: 10px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      height: 40px;
+      font-size: 18px;
+      padding: 5px;
+      box-sizing: border-box;
+      text-align: right;
+    }
+
+    button {
+      width: 60px;
+      height: 40px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      background-color: rgb(224, 224, 224);
+    }
+    .operator {
+      background-color: rgb(255, 184, 77);
+    }
+    .equals {
+      background-color: rgb(76, 175, 80);
+      color: white;
+    }
+    .clear {
+      background-color: rgb(244, 67, 54);
+      color: white;
+    }
+
+</style>
+<body id="body">
+    <table border="1" id="table">
+        <tr>
+            <td colspan="2" id="td"><input type="text" id="box" readonly></td>
+            <td ><button class="clear" style="width: 100%;" onclick="clearDisplay()">C</button></td>
+            <td><button onclick="Backspace()"><<-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="DisplayValue('7')">7</button></td>
+            <td><button onclick="DisplayValue('8')">8</button></td>
+            <td><button onclick="DisplayValue('9')">9</button></td>
+            <td><button class="operator" onclick="DisplayValue('/')">/</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="DisplayValue('4')">4</button></td>
+            <td><button onclick="DisplayValue('5')">5</button></td>
+            <td><button onclick="DisplayValue('6')">6</button></td>
+            <td><button class="operator" onclick="DisplayValue('*')">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="DisplayValue('1')">1</button></td>
+            <td><button onclick="DisplayValue('2')">2</button></td>
+            <td><button onclick="DisplayValue('3')">3</button></td>
+            <td><button class="operator" onclick="DisplayValue('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="DispalyValue('0')">0</button></td>
+            <td><button onclick="DispalyValue('.')">.</button></td>
+            <td><button class="equals" onclick="calculate()">=</button></td>
+            <td><button class="operator" onclick="DisplayValue('+')">+</button></td>
+        </tr>
+
+    </table>
+
+    <script>
+        function DisplayValue(value) {
+            document.getElementById("box").value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById("box").value = '';
+        }
+
+        function calculate() {
+            result = eval(document.getElementById("box").value);
+            document.getElementById("box").value = result;
+        }
+        function Backspace(){
+            document.getElementById("box")
+            box.value=box.value.slice(0,-1)
+        }
+
+    </script>
+
+</body>
+</html>

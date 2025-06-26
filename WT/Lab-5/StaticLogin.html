@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StaticLogin</title>
+    <style>
+      body {
+        background-color: rgb(240, 242, 245);
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      div {
+        background-color: white;
+        padding: 30px 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: rgb(76, 175, 80);
+        color: rgb(23, 21, 21);
+        border: none;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div">
+      <label for="userName">UserName</label>
+      <input type="text" name="Name" id="name" /><br /><br />
+
+      <label for="password">Password</label>
+      <input type="password" name="Password" id="number" /><br /><br />
+
+      <button id="login" onclick="login()">Login</button>
+    </div>
+    <script>
+      function login() {
+        let userName = document.getElementById("name").value;
+        let password = document.getElementById("number").value;
+        if (userName == "Sandip" && password == "0326") {
+          alert("Login Succesfully");
+        } else {
+          alert("Login Failed");
+        }
+      }
+    </script>
+  </body>
+</html>
