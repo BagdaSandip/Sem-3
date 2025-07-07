@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Attendance Tracker</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+    body {
+      height: 100px;
+      padding: 20px;
+      background-color: rgb(240, 240, 240);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .entry {
+      display: grid;
+      grid-template-columns: 1fr 2fr 3fr;
+      align-items: center;
+      padding: 15px;
+      margin: 10px auto;
+      background-color: white;
+      border-radius: 8px;
+      border: 1px solid rgb(204, 204, 204);
+      width: 80%;
+      max-width: 800px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .buttons button {
+      margin-right: 10px;
+      padding: 5px 10px;
+    }
+    .summary {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .controls {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .controls button {
+      margin: 5px;
+      padding: 8px 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simple Attendance Tracker</h1>
+  <div class="entry" id="101">
+    <div>101</div>
+    <div>Preet</div>
+    <div class="buttons">
+      <button onclick="markPresent('101')">Present</button>
+      <button onclick="markAbsent('101')">Absent</button>
+    </div>
+  </div>
+  <div class="entry" id="102">
+    <div>102</div>
+    <div>Mahesh</div>
+    <div class="buttons">
+      <button onclick="markPresent('102')">Present</button>
+      <button onclick="markAbsent('102')">Absent</button>
+    </div>
+  </div>
+  <div class="entry" id="103">
+    <div>103</div>
+    <div>Sanket</div>
+    <div class="buttons">
+      <button onclick="markPresent('103')">Present</button>
+      <button onclick="markAbsent('103')">Absent</button>
+    </div>
+  </div>
+  <div class="entry" id="104">
+    <div>104</div>
+    <div>Parth</div>
+    <div class="buttons">
+      <button onclick="markPresent('104')">Present</button>
+      <button onclick="markAbsent('104')">Absent</button>
+    </div>
+  </div>
+  <div class="entry" id="105">
+    <div>105</div>
+    <div>Naimish</div>
+    <div class="buttons">
+      <button onclick="markPresent('105')">Present</button>
+      <button onclick="markAbsent('105')">Absent</button>
+    </div>
+  </div>
+  <div class="entry" id="106">
+    <div>106</div>
+    <div>Shailesh</div>
+    <div class="buttons">
+      <button onclick="markPresent('106')">Present</button>
+      <button onclick="markAbsent('106')">Absent</button>
+    </div>
+  </div>
+  <div class="entry" id="107">
+    <div>107</div>
+    <div>Jaydip</div>
+    <div class="buttons">
+      <button onclick="markPresent('107')">Present</button>
+      <button onclick="markAbsent('107')">Absent</button>
+    </div>
+  </div>
+  <div class="entry" id="108">
+    <div>108</div>
+    <div>Ishan</div>
+    <div class="buttons">
+      <button onclick="markPresent('108')">Present</button>
+      <button onclick="markAbsent('108')">Absent</button>
+    </div>
+  </div>
+  <div class="entry" id="109">
+    <div>109</div>
+    <div>Yash</div>
+    <div class="buttons">
+      <button onclick="markPresent('109')">Present</button>
+      <button onclick="markAbsent('109')">Absent</button>
+    </div>
+  </div>
+  <div class="entry" id="110">
+    <div>110</div>
+    <div>Sandip</div>
+    <div class="buttons">
+      <button onclick="markPresent('110')">Present</button>
+      <button onclick="markAbsent('110')">Absent</button>
+    </div>
+  </div>
+  <div class="summary">
+    <h3>Total Present: <span id="presentCount">0</span></h3>
+    <h3>Total Absent: <span id="absentCount">0</span></h3>
+  </div>
+  <div class="controls">
+    <button onclick="showAbsentRolls()">Show Absent Roll Numbers</button>
+    <button onclick="resetAttendance()">Reset</button>
+  </div>
+  <script>
+    let attendance = {};
+    function markPresent(roll) {
+      attendance[roll] = "present";
+      document.getElementById(roll).style.backgroundColor = "#d4ffd4";
+      updateCounts();
+    }
+
+    function markAbsent(roll) {
+      attendance[roll] = "absent";
+      document.getElementById(roll).style.backgroundColor = "#ffd4d4";
+      updateCounts();
+    }
+
+    function updateCounts() {
+      let present = 0;
+      let absent = 0;
+      for (let roll in attendance) {
+        if (attendance[roll] == "present") present++;
+        else if (attendance[roll] =="absent") absent++;
+      }
+      document.getElementById("presentCount").textContent = present;
+      document.getElementById("absentCount").textContent = absent;
+    }
+    function showAbsentRolls() {
+      let absentRolls = [];
+      for (let roll in attendance) {
+        if (attendance[roll] === "absent") {
+          absentRolls.push(roll);
+        }
+      }
+      if (absentRolls.length > 0) {
+        alert("Absent Roll Numbers: " + absentRolls.join(", "));
+      } else {
+        alert("No absent students marked yet.");
+      }
+    }
+
+    function resetAttendance() {
+      attendance = {};
+      document.getElementById("presentCount").textContent = 0;
+      document.getElementById("absentCount").textContent = 0;
+      let entries = document.getElementsByClassName("entry");
+      for (let i = 0; i < entries.length; i++) {
+        entries[i].style.backgroundColor = "white";
+      }
+    }
+  </script>
+</body>
+</html>
